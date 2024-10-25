@@ -37,7 +37,7 @@ cat Sum1ton.c
 
    ![WhatsApp Image 2024-10-21 at 16 42 46_e8e312fa](https://github.com/user-attachments/assets/b1a4fa76-8b74-43ec-a888-12e84e3f1331)
 
-## Steps to Compile a C Code in RISC-V Compiler:
+## Steps to Generate a Assembly Code of a C Code in RISC-V Compiler:
 1. Type the following command to create a '.o' file for the created '.c' file (file with C code), in the 'Home' directory. <br/>
    `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <file_name>.o <file_name>.c`
 ```bash
