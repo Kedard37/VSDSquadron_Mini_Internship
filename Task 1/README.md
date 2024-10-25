@@ -1,5 +1,5 @@
 # Task 1 Output:
-#### Steps to Create a C Code in C Compiler:
+## Steps to Create a C Code in C Compiler:
 1. To create a C code in a linux terminal, initially change to 'Home' directory by typing the command, `cd`.
 ```bash
 cd
@@ -17,7 +17,7 @@ leafpad Sum1ton.c &
 
    ![WhatsApp Image 2024-10-21 at 16 41 08_e4eaac07](https://github.com/user-attachments/assets/cc5f856b-516a-4e10-a154-325292aefda6)
 
-#### Steps to Compile a C Code in C Compiler:
+## Steps to Compile a C Code in C Compiler:
 1. Compile and run the code by typing these two commands one after the other. <br/>
    `gcc <file_name>.c` <br/>
    `./a.out`
@@ -37,7 +37,7 @@ cat Sum1ton.c
 
    ![WhatsApp Image 2024-10-21 at 16 42 46_e8e312fa](https://github.com/user-attachments/assets/b1a4fa76-8b74-43ec-a888-12e84e3f1331)
 
-#### Steps to Compile a C Code in RISC-V Compiler:
+## Steps to Compile a C Code in RISC-V Compiler:
 1. Type the following command to create a '.o' file for the created '.c' file (file with C code), in the 'Home' directory. <br/>
    `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <file_name>.o <file_name>.c`
 ```bash
