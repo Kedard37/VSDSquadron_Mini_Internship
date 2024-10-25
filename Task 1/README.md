@@ -1,4 +1,4 @@
-### Steps inferred in Task 1 Videos:
+# Task 1 Output:
 #### Steps to Create a C Code in C Compiler:
 1. To create a C code in a linux terminal, initially change to 'Home' directory by typing the command, `cd`.
 ```bash
