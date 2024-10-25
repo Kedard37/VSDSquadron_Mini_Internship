@@ -16,6 +16,8 @@ This repository includes the files related to VSDSquadron Mini Research Internsh
 
 ### Task: 2
 #### Recording-2: https://1drv.ms/v/s!Ai4WW_jutengioNNuMgM-OzvVic2Qw?e=qyDLQx
+#### Task: 2A
 1. SPIKE Simulation (https://1drv.ms/v/s!Ai4WW_jutengg7dmZwxQmBY-JEGihg?e=A4ASgZ) and observation with -O1 and -Ofast.
 2. Upload snapshot of compiled C Code, RISC-V Objdmp with above options on your GitHub repo.
-3. Write a simple C program for any simple application and compile with RISC-V GCC/SPIKE.
+#### Task: 2B
+1. Write a simple C program for any simple application and compile with RISC-V GCC/SPIKE.
