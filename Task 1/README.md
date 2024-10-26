@@ -15,7 +15,8 @@ leafpad Sum1ton.c &
 
 3. Type the C code in the text editor as shown below.
 
-   ![WhatsApp Image 2024-10-21 at 16 41 08_e4eaac07](https://github.com/user-attachments/assets/cc5f856b-516a-4e10-a154-325292aefda6)
+   ![Created C Code](https://github.com/user-attachments/assets/cc5f856b-516a-4e10-a154-325292aefda6)
+   ***Figure 1. Created C Code***
 
 ## Steps to Compile a C Code in C Compiler:
 1. Compile and run the code by typing these two commands one after the other. <br/>
@@ -35,10 +36,17 @@ gcc Sum1ton.c
 cat Sum1ton.c
 ```
 
-   ![WhatsApp Image 2024-10-21 at 16 42 46_e8e312fa](https://github.com/user-attachments/assets/b1a4fa76-8b74-43ec-a888-12e84e3f1331)
+   ![Compiled C Code](https://github.com/user-attachments/assets/b1a4fa76-8b74-43ec-a888-12e84e3f1331)
+   ***Figure 2. Compiled C Code in GCC***
 
 ## Steps to Generate a Assembly Code of a C Code in RISC-V Compiler:
 1. Type the following command to create a '.o' file for the created '.c' file (file with C code), in the 'Home' directory. <br/>
+##### Using `-O1` Variable:
+   `riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <file_name>.o <file_name>.c`
+```bash
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o Sum1ton.o Sum1ton.c
+```
+##### Using `-Ofast` Variable:
    `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o <file_name>.o <file_name>.c`
 ```bash
 riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o Sum1ton.o Sum1ton.c
@@ -67,5 +75,11 @@ riscv64-unknown-elf-objdump -d Sum1ton.o | less
 
 > [!IMPORTANT]
 > Type `/main` to look out for all the matches of 'main'.
-   
-   ![WhatsApp Image 2024-10-21 at 16 50 34_58286f8b](https://github.com/user-attachments/assets/e82c6220-c96b-44c0-b95f-d7e0014a3520)
+
+   ![Generated Assembly code for the C code using `-O1` variable](https://github.com/user-attachments/assets/1767b985-86a1-4bb6-96ec-7a2cc144dfef)
+   ***Figure 3. Generated Assembly code for the C code using `-O1` variable*** </br>
+   Here, when `-O1` variable is used, we see that the compiler takes 15 instructions to compile the C code.
+
+   ![Generated Assembly code for the C code using `-Ofast` variable](https://github.com/user-attachments/assets/e82c6220-c96b-44c0-b95f-d7e0014a3520)
+   ***Figure 4. Generated Assembly code for the C code using `-Ofast` variable*** </br>
+   But, when `-Ofast` variable is used, we see that the compiler takes 12 instructions to compile the C code.
