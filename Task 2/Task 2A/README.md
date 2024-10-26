@@ -15,12 +15,16 @@ We noted that the number of instructions varied based on the optimization level,
 The main objective of this task is to verify whether the C program compiled in GCC and RISC-V are same or not.<br/>
 1. To compile and run the C program in RISC-V compiler, first open a new Linux terminal and navigate to the directory where the object file of the C program is stored.<br/>
 2. Next, type the following command, `spike pk <file_name>.o`, to get the compiled output.
-```bash
-spike pk Sum1ton.o
-```
+  ```bash
+  spike pk Sum1ton.o
+  ```
+> [!NOTE]
+> * `spike`: This is the RISC-V ISA simulator (also known as a RISC-V functional simulator). Spike is a tool that emulates RISC-V hardware, allowing us to test and run RISC-V programs on a simulated environment without actual hardware.
+> * `pk`: This stands for "proxy kernel," which acts as a lightweight operating system for running programs in the Spike simulator. It provides basic system call services, such as file I/O and memory management, that are needed to run user programs in the simulated environment.
+
 ![Compiled C Code in RISC-V Spike Simulator](https://github.com/user-attachments/assets/ddfac69a-b4ff-402d-b6c6-49476fb0f597) <br/>
 ***Figure 1. Compiled C Code in Spike Simulator*** <br/>
 Upon comparing the compiled outputs from GCC (from the previous task) and Spike Simulation (from this task), we see that both the outputs are same. 
-Hence, we can conclude that the generated Assembly instructions are correct for the written C program. 
+Hence, we can conclude that the generated Assembly Instructions are correct for the written C program. 
 
 ## Steps to Debug the Compilation Process in Spike Simulation:
