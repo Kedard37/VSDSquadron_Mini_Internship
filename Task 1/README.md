@@ -18,7 +18,7 @@ leafpad Sum1ton.c &
    ![Created C Code](https://github.com/user-attachments/assets/cc5f856b-516a-4e10-a154-325292aefda6)
    ***Figure 1. Created C Code***
 
-## Steps to Compile a C Code in C Compiler:
+## Steps to Compile a C Code in the GNU Compiler Collection (GCC):
 1. Compile and run the code by typing these two commands one after the other. <br/>
    `gcc <file_name>.c` <br/>
    `./a.out`
@@ -39,7 +39,7 @@ cat Sum1ton.c
    ![Compiled C Code](https://github.com/user-attachments/assets/b1a4fa76-8b74-43ec-a888-12e84e3f1331)
    ***Figure 2. Compiled C Code in GCC***
 
-## Steps to Generate a Assembly Code of a C Code in RISC-V Compiler:
+## Steps to Generate a Assembly Code of a C Code in the RISC-V Compiler:
 1. Type the following command to create a '.o' file for the created '.c' file (file with C code), in the 'Home' directory. <br/>
 ##### Using `-O1` Variable:
    `riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o <file_name>.o <file_name>.c`
