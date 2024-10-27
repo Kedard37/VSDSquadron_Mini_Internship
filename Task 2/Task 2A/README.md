@@ -49,5 +49,11 @@ spike -d pf Sum1ton.o
 > * Press **Enter** to execute the instruction and move to next instruction.
 > * Press **Q** to exit the Spike Debugging shell.
 
+![Debug 1](https://github.com/user-attachments/assets/9d2c10f3-1d38-4549-a85a-6d1d4c536214) <br/>
+***Figure 4. Debug 1*** <br/>
+In this image, we see the **Spike simulator** running in **debug mode** with the program `Sum1ton.o`. The command `until pc 0 100b0` is issued, which instructs the simulator to run until the program counter (PC) reaches address `0x100b0`. The user then inspects the contents of two registers: **`a2`** and **`a0`** using the `reg 0` command. Initially, `a2` holds the value `0x0`, and `a0` holds the value `0x1`. The simulator steps through the program, executing two instructions (`lui a2, 0x1` and `lui a0, 0x21`), which load immediate values into the registers. After the instructions execute, `a2` contains `0x1000`, and `a0` contains `0x21000`, showing how the values in these registers change during execution.
+> [!NOTE]
+> `lui` stands for **Load Upper Immediate**, which is an instruction in the RISC-V instruction set. It is used to load a immediate value into the upper 52 bits of a register, while the lower 12 bits are set to 0.
+
 
 
