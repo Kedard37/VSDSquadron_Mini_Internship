@@ -31,9 +31,9 @@ Upon comparing the compiled outputs from GCC (from the previous task) and Spike 
 Hence, we can conclude that the generated Assembly Instructions are correct for the written C program. 
 
 ## Steps to Debug the Compilation Process in Spike Simulation:
-1. To debug the instructions executed by the Spike Simulator step-by-step, we use the command, `spike -d pf <file_name>.o`.
+1. To debug the instructions executed by the Spike Simulator step-by-step, we use the command, `spike -d pk <file_name>.o`.
 ```bash
-spike -d pf Sum1ton.o
+spike -d pk Sum1ton.o
 ```
 > [!NOTE]
 > * `-d`: This flag stands for debug mode. When we use this option, Spike runs in an interactive debug mode, allowing us to step through the execution of the program, examine registers, set breakpoints, and inspect the state of the processor while the program runs.
@@ -51,9 +51,20 @@ spike -d pf Sum1ton.o
 
 ![Debug 1](https://github.com/user-attachments/assets/9d2c10f3-1d38-4549-a85a-6d1d4c536214) <br/>
 ***Figure 4. Debug 1*** <br/>
-In this image, we see the **Spike simulator** running in **debug mode** with the program `Sum1ton.o`. The command `until pc 0 100b0` is issued, which instructs the simulator to run until the program counter (PC) reaches address `0x100b0`. The user then inspects the contents of two registers: **`a2`** and **`a0`** using the `reg 0` command. Initially, `a2` holds the value `0x0`, and `a0` holds the value `0x1`. The simulator steps through the program, executing two instructions (`lui a2, 0x1` and `lui a0, 0x21`), which load immediate values into the registers. After the instructions execute, `a2` contains `0x1000`, and `a0` contains `0x21000`, showing how the values in these registers change during execution.
+In this image, we see the Spike simulator running in debug mode with the program `Sum1ton.o`. The command `until pc 0 100b0` is issued, which instructs the simulator to run until the program counter (PC) reaches address `0x100b0`. The we the contents of two registers: `a2` and `a0` using the `reg 0` command. Initially, `a2` holds the value `0x0`, and `a0` holds the value `0x1`. The simulator steps through the program, executing two instructions (`lui a2, 0x1` and `lui a0, 0x21`), which load immediate values into the registers. After the instructions execute, `a2` contains `0x1000`, and `a0` contains `0x21000`, showing how the values in these registers change during execution.
 > [!NOTE]
 > `lui` stands for **Load Upper Immediate**, which is an instruction in the RISC-V instruction set. It is used to load a immediate value into the upper 52 bits of a register, while the lower 12 bits are set to 0.
 
+![Debug 2](https://github.com/user-attachments/assets/943f67e1-d9f9-47cc-b9d6-274a639a04e2) <br/>
+***Figure 5. Debug 2*** <br/>
+In the image, the Spike simulator is running `Sum1ton.o` in debug mode, and after halting at PC `0x100b8`, the stack pointer (`sp`) initially holds `0x0000003ffffffb50` and register `a2` holds `0x0000000000001000`. The program then executes two **addi** (add immediate) instructions: the first, `addi sp, sp, -16`, decreases the stack pointer by (16)<sub>decimal</sub> = (10)<sub>hexadecimal</sub>, resulting in `0x0000003ffffffb40`, while the second, `addi a2, a2, 954`, increases the value of register `a2` by (954)<sub>decimal</sub> = (3ba)<sub>hexadecimal</sub>, updating it to `0x0000000000013ba`. This demonstrates how the program updates these registers as part of its execution flow.
+> [!NOTE]
+> `addi` stands for **Add Immediate**, an instruction in the RISC-V instruction set that performs an addition between a register and an immediate (a constant value) and stores the result back into a register.
 
+![image](https://github.com/user-attachments/assets/3313ea88-82a5-4819-91e9-84ed789ad1a0) <br/>
+***Figure 6. Debug 3*** <br/>
+In this image, the Spike simulator is running the `Sum1ton.o` program in debug mode, pausing at PC `0x100c0`. Initially, register `a1` holds `0x0000003ffffffb58` and `a0` holds `0x0000000000021000`. The first instruction executed is `li a1, 100`, which loads the value (100)<sub>decimal</sub> = (64)<sub>hexadecimal</sub> into register `a1`, updating it to `0x0000000000000064`. The second instruction, `addi a0, a0, 384`, adds the immediate value (384)<sub>decimal</sub> = (180)<sub>hexadecimal</sub> to the current value of `a0`, resulting in `0x0000000000021180`. This demonstrates how the program updates the values in these registers through simple arithmetic and load operations.
+> [!NOTE]
+> `li` stands for **Load Immediate**, which is a pseudo-instruction used to load a constant (immediate value) into a register.
 
+Similarly, other instructions in the Assembly code can be debugged in the same fashion.
