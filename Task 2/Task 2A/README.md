@@ -24,6 +24,9 @@ The main objective of this task is to verify whether the C program compiled in G
 
 ![Compiled C Code in RISC-V Spike Simulator](https://github.com/user-attachments/assets/ddfac69a-b4ff-402d-b6c6-49476fb0f597) <br/>
 ***Figure 1. Compiled C Code in Spike Simulator*** <br/>
+<br/>
+![Compiled C Code in GCC v/s Spike Simulator](https://github.com/user-attachments/assets/de1e4468-d26f-42bf-b888-e738490ccb5c) <br/>
+***Figure 2. Compiled C Code in GCC v/s Spike Simulator*** <br/>
 Upon comparing the compiled outputs from GCC (from the previous task) and Spike Simulation (from this task), we see that both the outputs are same. 
 Hence, we can conclude that the generated Assembly Instructions are correct for the written C program. 
 
