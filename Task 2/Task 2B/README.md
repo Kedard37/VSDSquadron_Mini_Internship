@@ -5,7 +5,7 @@ The RISC-V assembly code will be executed using the Spike simulator, and the out
 This process aims to validate the functionality of the digital design both at the C and assembly levels.
 
 ## Digital Design Application:
-### Maximum & Minumum Number Detector:
+### Maximum & Minimum Number Detector:
 The **Maximum & Minimum Number Detector** is a digital design application that identifies the largest and smallest numbers from a given set of inputs. 
 This application is crucial in systems where real-time data processing is needed, such as sensor data analysis, decision-making circuits, or optimization algorithms. 
 By comparing multiple inputs, the design detects and outputs both the maximum and minimum values, providing an essential function in data filtering, control systems, and digital signal processing.
@@ -25,7 +25,7 @@ By comparing multiple inputs, the design detects and outputs both the maximum an
 #### 4. Compiling & Verifying the Written C Program using Spike Simulator:
 ![Compiled_C_Code_in_Spike_Simulator](https://github.com/user-attachments/assets/8de29c45-6d5b-4a38-9d30-0d718d5a18e0) <br/>
 ***Figure 4. Compiled C Code in Spike Simulator***
-### Thus, the outputs compiled by GCC and the Spike simulator are the same! 
+### Thus, the outputs compiled by GCC and the Spike Simulator are the same! 
 ### Hence, Verified!
 #### 5. View the Written C Program on the Terminal (OPTIONAL):
 ![View_the_C_Program](https://github.com/user-attachments/assets/6f91d05d-d847-4342-8c04-b38d196a9fb3) <br/>
