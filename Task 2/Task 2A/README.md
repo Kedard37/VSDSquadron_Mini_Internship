@@ -31,3 +31,23 @@ Upon comparing the compiled outputs from GCC (from the previous task) and Spike 
 Hence, we can conclude that the generated Assembly Instructions are correct for the written C program. 
 
 ## Steps to Debug the Compilation Process in Spike Simulation:
+1. To debug the instructions executed by the Spike Simulator step-by-step, we use the command, `spike -d pf <file_name>.o`.
+```bash
+spike -d pf Sum1ton.o
+```
+> [!NOTE]
+> * `-d`: This flag stands for debug mode. When we use this option, Spike runs in an interactive debug mode, allowing us to step through the execution of the program, examine registers, set breakpoints, and inspect the state of the processor while the program runs.
+2. Open the previously generated Assembly Code by RISC-V compiler in a new terminal to verify functionality. A screenshot of the same has been pasted below.<br/>
+  ![image](https://github.com/user-attachments/assets/65dee3f9-9743-4d78-a51d-8114e657b033) <br/>
+***Figure 3. Generated Assembly Code in RISC-V Compiler*** <br/>
+3. Type the following commands in the Spike Debugging shell, and try to understand the execution as per your requirement. <br/>
+  `until pc 0 <instruction_no.>` <br/>
+  `reg 0 <register_no.>`
+> [!IMPORTANT]
+> * `until pc 0 <instruction_no.>` - When we issue the command until `pc 0 <instruction_no.>`, the Spike simulator will run the program continuously (without stepping through each instruction) until the PC reaches the specific instruction address (`<instruction_no.>`). Once the PC matches this address, the simulator will pause, allowing us to inspect the state of the program, registers, memory, etc., at that exact point in execution.
+> * `reg 0 <register_no.>` - When we `use reg 0 <register_no.>`, Spike will display the value stored in the specified register of the core 0.
+> * Press **Enter** to execute the instruction and move to next instruction.
+> * Press **Q** to exit the Spike Debugging shell.
+
+
+
