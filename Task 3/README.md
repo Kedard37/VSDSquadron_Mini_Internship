@@ -137,12 +137,10 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **rd (ra)**: x1 = 00001 (5 bits)
 - **Immediate (10634)**: 010101110000 (split into imm[20|10:1|11|19:12])
   - imm[20] = 0
-  - imm[10:1] = 0101011100
+  - imm[10:1] = 1010101110
   - imm[11] = 0
-  - imm[19:12] = 00000010
-- **32-bit instruction**: `01010111000000000000000011101111` = `55c000ef`
-
----
+  - imm[19:12] = 00000000
+- **32-bit instruction**: `0 1010101110 0 00000000 00001 1101111` = `55c000ef`
 
 ### 5. `li s2, 5`
 - **Type**: I-Type
@@ -151,9 +149,7 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **rs1 (x0)**: x0 = 00000 (5 bits)
 - **funct3**: 000 (3 bits)
 - **Immediate (5)**: 000000000101 (12 bits)
-- **32-bit instruction**: `0000000001010000000010010010011` = `00500913`
-
----
+- **32-bit instruction**: `000000000101 00000 000 10010 0010011` = `00500913`
 
 ### 6. `addiw s0, s0, 1`
 - **Type**: I-Type
@@ -162,9 +158,7 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **rs1 (s0)**: x8 = 01000 (5 bits)
 - **funct3**: 000 (3 bits)
 - **Immediate (1)**: 000000000001 (12 bits)
-- **32-bit instruction**: `00000000000101000000010000011011` = `0014041b`
-
----
+- **32-bit instruction**: `000000000001 01000 000 01000 0011011` = `0014041b`
 
 ### 7. `mv a1, s0`
 - **Type**: I-Type
@@ -173,9 +167,7 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **rs1 (s0)**: x8 = 01000 (5 bits)
 - **funct3**: 000 (3 bits)
 - **Immediate (0)**: 000000000000 (12 bits)
-- **32-bit instruction**: `00000000000001000000010110011011` = `00040593`
-
----
+- **32-bit instruction**: `000000000000 01000 000 01011 0010011` = `00040593`
 
 ### 8. `bne s0, s2, 100ec`
 - **Type**: B-Type
@@ -186,11 +178,9 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **Immediate (100ec)**: 111111100100 (split into imm[12|10:5|4:1|11])
   - imm[12] = 1
   - imm[10:5] = 111111
-  - imm[4:1] = 0010
-  - imm[11] = 0
-- **32-bit instruction**: `11111110001001000000000011100011` = `ff2410e3`
-
----
+  - imm[4:1] = 0000
+  - imm[11] = 1
+- **32-bit instruction**: `1 111111 10010 01000 001 0000 1 1100011` = `ff2410e3`
 
 ### 9. `lw a4, 8(sp)`
 - **Type**: I-Type
@@ -199,9 +189,7 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **rs1 (sp)**: x2 = 00010 (5 bits)
 - **funct3**: 010 (3 bits)
 - **Immediate (8)**: 000000000100 (12 bits)
-- **32-bit instruction**: `00000000100000010010001101110011` = `00812703`
-
----
+- **32-bit instruction**: `000000001000 00010 010 01110 0000011` = `00812703`
 
 ### 10. `blt a4, a2, 101dc`
 - **Type**: B-Type
@@ -210,25 +198,21 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **rs2 (a2)**: x12 = 01100 (5 bits)
 - **funct3**: 100 (3 bits)
 - **Immediate (101dc)**: 000110011000 (split into imm[12|10:5|4:1|11])
-  - imm[12] = 1
-  - imm[10:5] = 001100
-  - imm[4:1] = 1000
+  - imm[12] = 0
+  - imm[10:5] = 000110
+  - imm[4:1] = 0000
   - imm[11] = 0
-- **32-bit instruction**: `00001100110001110000000001100011` = `0cc74063`
-
----
+- **32-bit instruction**: `0 000110 01100 01110 100 0000 0 1100011` = `0cc74063`
 
 ### 11. `sext.w a5, a4`
 - **Type**: R-Type
-- **Opcode (SLLIW)**: 0111011 (7 bits)
+- **Opcode (SLLIW)**: 0011011 (7 bits)
 - **rd (a5)**: x15 = 01111 (5 bits)
 - **rs1 (a4)**: x14 = 01110 (5 bits)
 - **funct3**: 000 (3 bits)
-- **shamt**: 00000 (5 bits)
+- **rs2**: 00000 (5 bits)
 - **funct7**: 0000000 (7 bits)
-- **32-bit instruction**: `00000000000001110000011110011011` = `0007079b`
-
----
+- **32-bit instruction**: `0000000 00000 01110 000 01111 0011011` = `0007079b`
 
 ### 12. `ld s0, 64(sp)`
 - **Type**: I-Type
@@ -237,9 +221,7 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **rs1 (sp)**: x2 = 00010 (5 bits)
 - **funct3**: 011 (3 bits)
 - **Immediate (64)**: 000000010000 (12 bits)
-- **32-bit instruction**: `00000001000000010010001101110011` = `04013403`
-
----
+- **32-bit instruction**: `000001000000 00010 011 01000 0000011` = `04013403`
 
 ### 13. `j 10174`
 - **Type**: J-Type
