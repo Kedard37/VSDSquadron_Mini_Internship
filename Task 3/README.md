@@ -82,3 +82,5 @@ The above figure shows the instruction formats for various RISC-V instruction ty
 ---
 
 These formats show how different instruction types in RISC-V are encoded. They balance simplicity, flexibility, and compactness, making the architecture suitable for various types of operations.
+
+## Subtask 2. Identifying 15 unique RISC-V instructions from `Max_Min_Detector.o` Assembly Code:
