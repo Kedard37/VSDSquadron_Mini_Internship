@@ -84,18 +84,20 @@ The above figure shows the instruction formats for various RISC-V instruction ty
 These formats show how different instruction types in RISC-V are encoded. They balance simplicity, flexibility, and compactness, making the architecture suitable for various types of operations.
 
 ## Subtask 2. Identifying 15 unique RISC-V instructions from `Max_Min_Detector.o` Assembly Code along with the 32-Bit Instruction Code:
-1.  lui     a0, 0x2b       0002b537
-2.  addi    a0, a0, -544   de050513
-3.  sd      s3, 40(sp)     03313423
-4.  jal     ra, 10634      55c000ef
-5.  li      s2, 5          00500913
-6.  addiw   s0, s0, 1      0014041b
-7.  mv      a1, s0         00040593
-8.  bne     s0, s2, 100ec  ff2410e3
-9.  lw      a4, 8(sp)      00812703
-10. blt     a4, a2, 101dc  0cc74063
-11. sext.w  a5, a4         0007079b
-12. ld      s0, 64(sp)     04013403
-13. j       10174          fcdff06f
-14. ret                    00008067
-15. xor     a8, a1, a4     0040C433
+| Instruction No. | RISC_V Instruction | 32-Bit Instruction Code |
+| :---: | :--- | :---: |
+| 1.  | `lui     a0, 0x2b`       | `0002b537` | 
+| 2.  | `addi    a0, a0, -544`   | `de050513` | 
+| 3.  | `sd      s3, 40(sp)`     | `03313423` | 
+| 4.  | `jal     ra, 10634`      | `55c000ef` | 
+| 5.  | `li      s2, 5`          | `00500913` | 
+| 6.  | `addiw   s0, s0, 1`      | `0014041b` |
+| 7.  | `mv      a1, s0`         | `00040593` |
+| 8.  | `bne     s0, s2, 100ec`  | `ff2410e3` |
+| 9.  | `lw      a4, 8(sp)`      | `00812703` |
+| 10. | `blt     a4, a2, 101dc`  | `0cc74063` |
+| 11. | `sext.w  a5, a4`         | `0007079b` |
+| 12. | `ld      s0, 64(sp)`     | `04013403` |
+| 13. | `j       10174`          | `fcdff06f` |
+| 14. | `ret`                    | `00008067` |
+| 15. | `xor     a8, a1, a4`     | `0040C433` |
