@@ -101,3 +101,178 @@ These formats show how different instruction types in RISC-V are encoded. They b
 | 13. | `j       10174`          | `fcdff06f` |
 | 14. | `ret`                    | `00008067` |
 | 15. | `xor     a8, a1, a4`     | `0040C433` |
+
+## Subtask 3/4. Identifying Exact 32-bit Instruction Code in the Instruction Type format for above unique instructions and uploading it:
+Here is the instruction breakdown for the given RISC-V instructions in the Instruction Type format:
+### 1. `lui a0, 0x2b`
+- **Type**: U-Type
+- **Opcode (LUI)**: 0110111 (7 bits)
+- **rd (a0)**: x10 = 01010 (5 bits)
+- **Immediate (0x2b)**: 00000000000000101011 (upper 20 bits)
+- **32-bit instruction**: `00000000000000101011 01011 0110111` = `0002b537`
+  
+### 2. `addi a0, a0, -544`
+- **Type**: I-Type
+- **Opcode (ADDI)**: 0010011 (7 bits)
+- **rd (a0)**: x10 = 01010 (5 bits)
+- **rs1 (a0)**: x10 = 01010 (5 bits)
+- **funct3**: 000 (3 bits)
+- **Immediate (-544)**: 110111100000 (12 bits, two's complement for -544)
+- **32-bit instruction**: `110111100000 01010 000 01010 0010011` = `de050513`
+
+### 3. `sd s3, 40(sp)`
+- **Type**: S-Type
+- **Opcode (SD)**: 0100011 (7 bits)
+- **rs1 (sp)**: x2 = 00010 (5 bits)
+- **rs2 (s3)**: x19 = 10011 (5 bits)
+- **funct3**: 011 (3 bits)
+- **Immediate (40)**: 000000101000 (split into imm[11:5] and imm[4:0])
+  - imm[11:5]: 0000001
+  - imm[4:0]: 01000
+- **32-bit instruction**: `0000001 10011 00010 011 01000 0100011` = `03313423`
+
+### 4. `jal ra, 10634`
+- **Type**: J-Type
+- **Opcode (JAL)**: 1101111 (7 bits)
+- **rd (ra)**: x1 = 00001 (5 bits)
+- **Immediate (10634)**: 010101110000 (split into imm[20|10:1|11|19:12])
+  - imm[20] = 0
+  - imm[10:1] = 0101011100
+  - imm[11] = 0
+  - imm[19:12] = 00000010
+- **32-bit instruction**: `01010111000000000000000011101111` = `55c000ef`
+
+---
+
+### 5. `li s2, 5`
+- **Type**: I-Type
+- **Opcode (ADDI)**: 0010011 (7 bits)
+- **rd (s2)**: x18 = 10010 (5 bits)
+- **rs1 (x0)**: x0 = 00000 (5 bits)
+- **funct3**: 000 (3 bits)
+- **Immediate (5)**: 000000000101 (12 bits)
+- **32-bit instruction**: `0000000001010000000010010010011` = `00500913`
+
+---
+
+### 6. `addiw s0, s0, 1`
+- **Type**: I-Type
+- **Opcode (ADDIW)**: 0011011 (7 bits)
+- **rd (s0)**: x8 = 01000 (5 bits)
+- **rs1 (s0)**: x8 = 01000 (5 bits)
+- **funct3**: 000 (3 bits)
+- **Immediate (1)**: 000000000001 (12 bits)
+- **32-bit instruction**: `00000000000101000000010000011011` = `0014041b`
+
+---
+
+### 7. `mv a1, s0`
+- **Type**: I-Type
+- **Opcode (ADDI)**: 0010011 (7 bits)
+- **rd (a1)**: x11 = 01011 (5 bits)
+- **rs1 (s0)**: x8 = 01000 (5 bits)
+- **funct3**: 000 (3 bits)
+- **Immediate (0)**: 000000000000 (12 bits)
+- **32-bit instruction**: `00000000000001000000010110011011` = `00040593`
+
+---
+
+### 8. `bne s0, s2, 100ec`
+- **Type**: B-Type
+- **Opcode (BNE)**: 1100011 (7 bits)
+- **rs1 (s0)**: x8 = 01000 (5 bits)
+- **rs2 (s2)**: x18 = 10010 (5 bits)
+- **funct3**: 001 (3 bits)
+- **Immediate (100ec)**: 111111100100 (split into imm[12|10:5|4:1|11])
+  - imm[12] = 1
+  - imm[10:5] = 111111
+  - imm[4:1] = 0010
+  - imm[11] = 0
+- **32-bit instruction**: `11111110001001000000000011100011` = `ff2410e3`
+
+---
+
+### 9. `lw a4, 8(sp)`
+- **Type**: I-Type
+- **Opcode (LW)**: 0000011 (7 bits)
+- **rd (a4)**: x14 = 01110 (5 bits)
+- **rs1 (sp)**: x2 = 00010 (5 bits)
+- **funct3**: 010 (3 bits)
+- **Immediate (8)**: 000000000100 (12 bits)
+- **32-bit instruction**: `00000000100000010010001101110011` = `00812703`
+
+---
+
+### 10. `blt a4, a2, 101dc`
+- **Type**: B-Type
+- **Opcode (BLT)**: 1100011 (7 bits)
+- **rs1 (a4)**: x14 = 01110 (5 bits)
+- **rs2 (a2)**: x12 = 01100 (5 bits)
+- **funct3**: 100 (3 bits)
+- **Immediate (101dc)**: 000110011000 (split into imm[12|10:5|4:1|11])
+  - imm[12] = 1
+  - imm[10:5] = 001100
+  - imm[4:1] = 1000
+  - imm[11] = 0
+- **32-bit instruction**: `00001100110001110000000001100011` = `0cc74063`
+
+---
+
+### 11. `sext.w a5, a4`
+- **Type**: R-Type
+- **Opcode (SLLIW)**: 0111011 (7 bits)
+- **rd (a5)**: x15 = 01111 (5 bits)
+- **rs1 (a4)**: x14 = 01110 (5 bits)
+- **funct3**: 000 (3 bits)
+- **shamt**: 00000 (5 bits)
+- **funct7**: 0000000 (7 bits)
+- **32-bit instruction**: `00000000000001110000011110011011` = `0007079b`
+
+---
+
+### 12. `ld s0, 64(sp)`
+- **Type**: I-Type
+- **Opcode (LD)**: 0000011 (7 bits)
+- **rd (s0)**: x8 = 01000 (5 bits)
+- **rs1 (sp)**: x2 = 00010 (5 bits)
+- **funct3**: 011 (3 bits)
+- **Immediate (64)**: 000000010000 (12 bits)
+- **32-bit instruction**: `00000001000000010010001101110011` = `04013403`
+
+---
+
+### 13. `j 10174`
+- **Type**: J-Type
+- **Opcode (JAL)**: 1101111 (7 bits)
+- **rd (x0)**: x0 = 00000 (5 bits)
+- **Immediate (10174)**: 111111110100 (split into imm[20|10:1|11|19:12])
+  - imm[20] = 1
+  - imm[10:1] = 1111111010
+  - imm[11] = 0
+  - imm[19:12] = 11011110
+- **32-bit instruction**: `11111100110111111111000001101111` = `fcdff06f`
+
+---
+
+### 14. `ret`
+- **Type**: I-Type
+- **Opcode (JALR)**: 1100111 (7 bits)
+- **rd (x0)**: x0 = 00000 (5 bits)
+- **rs1 (ra)**: x1 = 00001 (5 bits)
+- **funct3**: 000 (3 bits)
+- **Immediate (0)**: 000000000000 (12 bits)
+- **32-bit instruction**: `000000000000
+
+00001000000001100111` = `00008067`
+
+---
+
+### 15. `xor a8, a1, a4`
+- **Type**: R-Type
+- **Opcode (XOR)**: 0110011 (7 bits)
+- **rd (a8)**: x15 = 01111 (5 bits)
+- **rs1 (a1)**: x11 = 01011 (5 bits)
+- **rs2 (a4)**: x14 = 01110 (5 bits)
+- **funct3**: 100 (3 bits)
+- **funct7**: 0000000 (7 bits)
+- **32-bit instruction**: `00000000111001011000011110010011` = `0040C433`
