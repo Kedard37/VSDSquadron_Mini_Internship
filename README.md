@@ -36,13 +36,85 @@ This repository includes the files related to VSDSquadron Mini Research Internsh
 ### Go to [Task 1](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%201) directory to get the codes, linux commands & more information about this task!
 </details>
 
-## Task: 2
+---
+
+<details>
+<summary><h2>Task: 2. Simulation Analysis using SPIKE and Building a Simple Application & Compiling it</h2></summary>
+  
 #### Recording-2: https://1drv.ms/v/s!Ai4WW_jutengioNNuMgM-OzvVic2Qw?e=qyDLQx
-### Task: 2A
-1. SPIKE Simulation (https://1drv.ms/v/s!Ai4WW_jutengg7dmZwxQmBY-JEGihg?e=A4ASgZ) and observation with -O1 and -Ofast.
-2. Upload snapshot of compiled C Code, RISC-V Objdmp with above options on your GitHub repo.
-### Task: 2B
-1. Write a simple C program for any simple application and compile with RISC-V GCC/SPIKE.
+
+<details>
+<summary><h3>Task: 2A. Simulation Analysis using SPIKE</h3></summary>
+  
+- [x] SPIKE Simulation (https://1drv.ms/v/s!Ai4WW_jutengg7dmZwxQmBY-JEGihg?e=A4ASgZ) and observation with -O1 and -Ofast.
+- [x] Upload snapshot of compiled C Code, RISC-V Objdmp with above options on your GitHub repo.
+
+## Task 2A Output:
+![Compiled C Code in RISC-V Spike Simulator](https://github.com/user-attachments/assets/ddfac69a-b4ff-402d-b6c6-49476fb0f597) <br/>
+***Figure 1. Compiled C Code in Spike Simulator*** <br/>
+
+![Compiled C Code in GCC v/s Spike Simulator](https://github.com/user-attachments/assets/de1e4468-d26f-42bf-b888-e738490ccb5c) <br/>
+***Figure 2. Compiled C Code in GCC v/s Spike Simulator*** <br/>
+Upon comparing the compiled outputs from GCC (from the previous task) and Spike Simulation (from this task), we see that both the outputs are same. 
+Hence, we can conclude that the generated Assembly Instructions are correct for the written C program. 
+
+## Debugging the Compilation Process in Spike Simulation:
+  ![image](https://github.com/user-attachments/assets/65dee3f9-9743-4d78-a51d-8114e657b033) <br/>
+***Figure 3. Generated Assembly Code in RISC-V Compiler*** <br/>
+
+![Debug 1](https://github.com/user-attachments/assets/9d2c10f3-1d38-4549-a85a-6d1d4c536214) <br/>
+***Figure 4. Debug 1*** <br/>
+In this image, we see the Spike simulator running in debug mode with the program `Sum1ton.o`. The command `until pc 0 100b0` is issued, which instructs the simulator to run until the program counter (PC) reaches address `0x100b0`. The we the contents of two registers: `a2` and `a0` using the `reg 0` command. Initially, `a2` holds the value `0x0`, and `a0` holds the value `0x1`. The simulator steps through the program, executing two instructions (`lui a2, 0x1` and `lui a0, 0x21`), which load immediate values into the registers. After the instructions execute, `a2` contains `0x1000`, and `a0` contains `0x21000`, showing how the values in these registers change during execution.
+
+![Debug 2](https://github.com/user-attachments/assets/943f67e1-d9f9-47cc-b9d6-274a639a04e2) <br/>
+***Figure 5. Debug 2*** <br/>
+In the image, the Spike simulator is running `Sum1ton.o` in debug mode, and after halting at PC `0x100b8`, the stack pointer (`sp`) initially holds `0x0000003ffffffb50` and register `a2` holds `0x0000000000001000`. The program then executes two **addi** (add immediate) instructions: the first, `addi sp, sp, -16`, decreases the stack pointer by (16)<sub>decimal</sub> = (10)<sub>hexadecimal</sub>, resulting in `0x0000003ffffffb40`, while the second, `addi a2, a2, 954`, increases the value of register `a2` by (954)<sub>decimal</sub> = (3ba)<sub>hexadecimal</sub>, updating it to `0x0000000000013ba`. This demonstrates how the program updates these registers as part of its execution flow.
+
+![image](https://github.com/user-attachments/assets/3313ea88-82a5-4819-91e9-84ed789ad1a0) <br/>
+***Figure 6. Debug 3*** <br/>
+In this image, the Spike simulator is running the `Sum1ton.o` program in debug mode, pausing at PC `0x100c0`. Initially, register `a1` holds `0x0000003ffffffb58` and `a0` holds `0x0000000000021000`. The first instruction executed is `li a1, 100`, which loads the value (100)<sub>decimal</sub> = (64)<sub>hexadecimal</sub> into register `a1`, updating it to `0x0000000000000064`. The second instruction, `addi a0, a0, 384`, adds the immediate value (384)<sub>decimal</sub> = (180)<sub>hexadecimal</sub> to the current value of `a0`, resulting in `0x0000000000021180`. This demonstrates how the program updates the values in these registers through simple arithmetic and load operations. <br/>
+
+Similarly, other instructions in the Assembly code can be debugged in the same fashion.
+</details>
+
+<details>
+<summary><h3>Task: 2B. Building a Simple Application & Compiling the same</h3></summary>
+  
+- [x] Write a simple C program for any simple application and compile with RISC-V GCC/SPIKE.
+
+## Task 2B Output:
+## Digital Design Application:
+### Maximum & Minimum Number Detector:
+The **Maximum & Minimum Number Detector** is a digital design application that identifies the largest and smallest numbers from a given set of inputs. 
+This application is crucial in systems where real-time data processing is needed, such as sensor data analysis, decision-making circuits, or optimization algorithms. 
+By comparing multiple inputs, the design detects and outputs both the maximum and minimum values, providing an essential function in data filtering, control systems, and digital signal processing.
+
+#### 1. Writing a C Program to Find Maximum & Minimum of 5 User given Numerical Inputs:
+![Create_a_C_Program](https://github.com/user-attachments/assets/1d144a1f-25ee-44e4-bd2d-67c7ac1cf36e) </br>
+***Figure 1. Creating a C Program***
+
+#### 2. Compiling the Written C Program using GCC(GNU Compiler Collection):
+![Compiled_C_Code_in_GCC](https://github.com/user-attachments/assets/b11b1e2b-8cd8-4075-8712-a281b2c76d25) </br>
+***Figure 2. Compiled C Code in GCC***
+
+#### 3. Generating the Assembly Code for the written C Program using RISC-V Compiler:
+![Generated_Assembly_code_in_RISC_V_Compiler](https://github.com/user-attachments/assets/a76f6e84-d9b7-4457-baac-85cc3968a8ef) <br/>
+***Figure 3. Generated Assembly Code in RISC_V Compiler***
+
+#### 4. Compiling & Verifying the Written C Program using Spike Simulator:
+![Compiled_C_Code_in_Spike_Simulator](https://github.com/user-attachments/assets/8de29c45-6d5b-4a38-9d30-0d718d5a18e0) <br/>
+***Figure 4. Compiled C Code in Spike Simulator***
+### Thus, the outputs compiled by GCC and the Spike Simulator are the same! 
+### Hence, Verified!
+#### 5. View the Written C Program on the Terminal (OPTIONAL):
+![View_the_C_Program](https://github.com/user-attachments/assets/6f91d05d-d847-4342-8c04-b38d196a9fb3) <br/>
+***Figure 5. View the C Program***
+</details>
+
+### Go to [Task 2](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%202) directory to get the codes, linux commands & more information about this task!
+</details>
+
+---
 
 <details>
 <summary><h2>Task: 3. Analysis and Encoding of RISC-V Instruction Set for Application Code</h2></summary>
@@ -315,3 +387,6 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 
 ### Go to [Task 3](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%203) directory to get more information about this task!
 </details>
+
+---
+
