@@ -10,11 +10,11 @@ This repository includes the files related to VSDSquadron Mini Research Internsh
 <summary><h2>Task: 1</h2></summary>
   
 #### Recording-1: https://1drv.ms/v/s!Ai4WW_jutengioJdZ78uhSPF1aH--w?e=FOv6oe
-- [X] Create GitHub repo.
-- [X] Install RISC-V toolchain using VDI shared over whatsapp group.
-- [X] Refer to C based Lab video (https://1drv.ms/v/s!Ai4WW_jutenghrYpUsL_MLKJDSLVyg?e=gdA9TW) and RISC-V based lab video (https://1drv.ms/v/s!Ai4WW_jutengg7dbp9XlZXjJmxogBw?e=ycX4fO). 
-- [X] Complete exact steps on your machine. 
-- [X] Upload snapshot of compiled C code and RISC-V Objdmp on your GitHub repo. 
+- [ ] Create GitHub repo.
+- [ ] Install RISC-V toolchain using VDI shared over whatsapp group.
+- [ ] Refer to C based Lab video (https://1drv.ms/v/s!Ai4WW_jutenghrYpUsL_MLKJDSLVyg?e=gdA9TW) and RISC-V based lab video (https://1drv.ms/v/s!Ai4WW_jutengg7dbp9XlZXjJmxogBw?e=ycX4fO). 
+- [ ] Complete exact steps on your machine. 
+- [ ] Upload snapshot of compiled C code and RISC-V Objdmp on your GitHub repo. 
 </details>
 
 ## Task: 2
