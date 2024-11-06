@@ -14,7 +14,7 @@ This repository includes the files related to VSDSquadron Mini Research Internsh
 #### Recording-1: https://1drv.ms/v/s!Ai4WW_jutengioJdZ78uhSPF1aH--w?e=FOv6oe
 - [x] Create GitHub repo.
 - [x] Install RISC-V toolchain using VDI shared over whatsapp group.
-- [x] Refer to C based Lab video (https://1drv.ms/v/s!Ai4WW_jutenghrYpUsL_MLKJDSLVyg?e=gdA9TW) and RISC-V based lab video (https://1drv.ms/v/s!Ai4WW_jutengg7dbp9XlZXjJmxogBw?e=ycX4fO). 
+- [x] Refer to [C based Lab video](https://1drv.ms/v/s!Ai4WW_jutenghrYpUsL_MLKJDSLVyg?e=gdA9TW) and [RISC-V based lab video](https://1drv.ms/v/s!Ai4WW_jutengg7dbp9XlZXjJmxogBw?e=ycX4fO). 
 - [x] Complete exact steps on your machine. 
 - [x] Upload snapshot of compiled C code and RISC-V Objdmp on your GitHub repo.
 
@@ -46,7 +46,7 @@ This repository includes the files related to VSDSquadron Mini Research Internsh
 <details>
 <summary><h3>Task: 2A. Simulation Analysis using SPIKE</h3></summary>
   
-- [x] SPIKE Simulation (https://1drv.ms/v/s!Ai4WW_jutengg7dmZwxQmBY-JEGihg?e=A4ASgZ) and observation with -O1 and -Ofast.
+- [x] [SPIKE Simulation](https://1drv.ms/v/s!Ai4WW_jutengg7dmZwxQmBY-JEGihg?e=A4ASgZ) and observation with -O1 and -Ofast.
 - [x] Upload snapshot of compiled C Code, RISC-V Objdmp with above options on your GitHub repo.
 
 ## Task 2A Output:
@@ -120,7 +120,7 @@ By comparing multiple inputs, the design detects and outputs both the maximum an
 <summary><h2>Task: 3. Analysis and Encoding of RISC-V Instruction Set for Application Code</h2></summary>
   
 #### Recording-3: https://1drv.ms/v/s!Ai4WW_jutengioVXeULLeI8yaBEUpQ?e=UShN0M
-- [x] List various RISC-V instruction type (R, I, S, B, U, J) after going through RISC-V software documentation (https://riscv.org/technical/specifications/).
+- [x] List various RISC-V instruction type (R, I, S, B, U, J) after going through [RISC-V software documentation](https://riscv.org/technical/specifications/).
 - [x] Identify 15 unique RISC-V instructions from riscv-objdmp of your application code.
 - [x] Identify exact 32-bit instruction code in the instruction type format for 15 unique instructions.
 - [x] Upload the 32-bit pattern on Github.
@@ -390,3 +390,14 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 
 ---
 
+<details>
+<summary><h2>Task: 4. Functional Simulation and Waveform Analysis of RISC-V Core Using Verilog Netlist</h2></summary>
+
+#### Recording-4: https://1drv.ms/v/s!Ai4WW_jutengiocZFrhHrTi2EYFAqA?e=nn2Xee
+- [ ] Use this [RISC-V Core Verilog netlist](https://github.com/vinayrayapati/rv32i/blob/main/iiitb_rv32i.v) and [testbench](https://github.com/vinayrayapati/rv32i/blob/main/iiitb_rv32i_tb.v) for functional simulation experiment.
+- [ ] Upload waveform snapshots for the commands on your GitHub.
+- [ ] Reference GitHub repo is [here](https://github.com/vinayrayapati/rv32i/).
+
+</details>
+
+---
