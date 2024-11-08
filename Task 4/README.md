@@ -37,15 +37,15 @@ gtkwave KD_rv32i.vcd
 | 1 |  `add r6, r2, r1`  |  `32'h00110333`  |  `32'h02208300`  |  
 | 2 |  `sub r7, r1, r2`  |  `32'h402083b3` |  `32'h02209380`  |  
 | 3 |  `and r8, r1, r3`  |  `32'h0030f433`  |  `32'h0230a400`  |  
-| 4|  `or r9, r2, r5`  |  `32'h005164b3`  |  `32'h02513480`  |  
-| 5|  `xor r10, r1, r4`  |  `32'h0040c533`  |  `32'h0240c500`  |  
-| 6|  `slt r1, r2, r4`  |  `32'h0045a0b3`  |  `32'h02415580`  |  
-| 7|  `addi r12, r4, 5`  |  `32'h004120b3`  |  `32'h00520600`  |  
-| 8|  `beq r0, r0, 15`  |  `32'h00000f63`  |  `32'h00f00002`  |  
-| 9|  `sw r3, r1, 2`  |  `32'h0030a123`  |  `32'h00209181`  |  
-| 10|  `lw r13, r1, 2`  |  `32'h0020a683` |  `32'h00208681`  |  
-| 11|  `srl r16, r14, r2`  |  `32'h0030a123`  |  `32'h00271803`  |
-| 12|  `sll r15, r1, r2`  |  `32'h002097b3`  |  `32'h00208783`  |   
+| 4 |  `or r9, r2, r5`  |  `32'h005164b3`  |  `32'h02513480`  |  
+| 5 |  `xor r10, r1, r4`  |  `32'h0040c533`  |  `32'h0240c500`  |  
+| 6 |  `slt r1, r2, r4`  |  `32'h0045a0b3`  |  `32'h02415580`  |  
+| 7 |  `addi r12, r4, 5`  |  `32'h004120b3`  |  `32'h00520600`  |  
+| 8 |  `beq r0, r0, 15`  |  `32'h00000f63`  |  `32'h00f00002`  |
+| 9 |  `sw r3, r1, 2`  |  `32'h0030a123`  |  `32'h00209181`  |  
+| 10 |  `lw r13, r1, 2`  |  `32'h0020a683` |  `32'h00208681`  |  
+| 11 |  `srl r16, r14, r2`  |  `32'h0030a123`  |  `32'h00271803`  |
+| 12 |  `sll r15, r1, r2`  |  `32'h002097b3`  |  `32'h00208783`  |   
 
 #### **Instruction 1.** `add r6, r2, r1` </br>
 ![ADD](https://github.com/user-attachments/assets/6fdac1d4-b422-4ad0-a931-c266280e6236) </br>
@@ -138,7 +138,7 @@ gtkwave KD_rv32i.vcd
 #### **Instruction 9.** `sll r15, r1, r2` </br>
 ![SLL](https://github.com/user-attachments/assets/b9c2e08b-cc01-423e-acf8-32efdc6f593a) </br>
 ***Figure 9. SLL Instruction*** </br>
-**SLL**: Shifts the bits in the first register left by the number of positions specified in the second register, storing the result in the destination register.
+- **SLL**: Shifts the bits in the first register left by the number of positions specified in the second register, storing the result in the destination register.
 - **Operation**: `SLL:EX_MEM_ALUOUT <= ID_EX_A << ID_EX_B;` 
 - **32-bit OP Code**: (`00208783`)<sub>16</sub> 
 - **ID_EX_A**: (1)<sub>10</sub>  
@@ -146,7 +146,16 @@ gtkwave KD_rv32i.vcd
 - **EX_MEM_ALUOUT**: (4)<sub>10</sub>
 - **Procedure**: (1)<sub>10</sub> << (2)<sub>10</sub> = (0001)<sub>2</sub> << (2)<sub>10</sub>  = (0100)<sub>2</sub> = (4)<sub>10</sub>
 
-
+#### **Instruction 10.** `beq r0, r0, 15` </br>
+![BEQ](https://github.com/user-attachments/assets/10e1ad5e-b95e-4be8-8356-f89dfacf36e0) </br>
+***Figure 10. BEQ Instruction*** </br>
+- **BEQ**: Branch if equal; jumps to a specified instruction if two registers are equal.
+- **Operation**: `EX_MEM_ALUOUT <= ID_EX_NPC + ID_EX_IMMEDIATE;` 
+- **32-bit OP Code**: (`00F00002`)<sub>16</sub> 
+- **ID_EX_NPC**: (10)<sub>10</sub>  
+- **ID_EX_IMMEDIATE**: (15)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (25)<sub>10</sub>
+- **Procedure**: (10)<sub>10</sub> + (15)<sub>10</sub> = (25)<sub>10</sub>
 
 
 
