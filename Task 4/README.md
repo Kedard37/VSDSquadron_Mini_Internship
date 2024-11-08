@@ -157,8 +157,13 @@ gtkwave KD_rv32i.vcd
 - **EX_MEM_ALUOUT**: (25)<sub>10</sub>
 - **Procedure**: (10)<sub>10</sub> + (15)<sub>10</sub> = (25)<sub>10</sub>
 
-
-
-
-
-
+> [!NOTE]
+> - **BNE**: Branch if not equal; jumps to a specified instruction if two registers are not equal.
+>    - **Operation**: `EX_MEM_ALUOUT <= ID_EX_NPC+ID_EX_IMMEDIATE;` 
+>    - **32-bit OP Code**: (`01409002`)<sub>16</sub> 
+> - **LW**: Load word; loads a 32-bit word from memory into a register.
+>    - **Operation**: `LW  :EX_MEM_ALUOUT <= ID_EX_A + ID_EX_IMMEDIATE;` 
+>    - **32-bit OP Code**: (`00208681`)<sub>16</sub> 
+> - **SRL**: Shift right logical; shifts the bits in a register to the right by a specified amount, filling with zeros.
+>    - **Operation**: `SRL:EX_MEM_ALUOUT <= ID_EX_A >> ID_EX_B;` 
+>    - **32-bit OP Code**: (`00271803`)<sub>16</sub> 
