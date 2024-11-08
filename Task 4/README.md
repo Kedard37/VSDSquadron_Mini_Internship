@@ -12,21 +12,21 @@
 > [!CAUTION]
 > In the testbench include the directives to write to a .vcd file, `$dumpfile("output_name.vcd");` and `$dumpvars(0, testbench_module);`.
 > ```bash
-> $dumpfile("KD_rv32i.vcd");
-> $dumpvars(0, KD_rv32i_tb);
+> $dumpfile("KedarD_rv32i.vcd");
+> $dumpvars(0, KedarD_rv32i_tb);
 > ```
 
 3. Run the following command, `iverilog -o output_name design_file.v testbench_file.v`, to compile the design and generate a simulation executable.
 ``` bash
-iverilog -o KD_rv32i KD_rv32i.v KD_rv32i_tb.v
+iverilog -o KedarD_rv32i KedarD_rv32i.v KedarD_rv32i_TB.v
 ```
 4. To run the generated simulation executable, use the command, `vvp output_name`.
 ``` bash
-vvp KD_rv32i
+vvp KedarD_rv32i
 ```
 5. View the waveform in GTKWave by running the command, `gtkwave output_name.vcd`.
 ``` bash
-gtkwave KD_rv32i.vcd
+gtkwave KedarD_rv32i.vcd
 ```
 6. In GTKWave, use the interface to view signals, zoom, and analyze the simulation results.
 
