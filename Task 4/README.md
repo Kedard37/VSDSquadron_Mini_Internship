@@ -50,47 +50,101 @@ gtkwave KD_rv32i.vcd
 #### **Instruction 1.** `add r6, r2, r1` </br>
 ![ADD](https://github.com/user-attachments/assets/6fdac1d4-b422-4ad0-a931-c266280e6236) </br>
 ***Figure 1. ADD Instruction*** </br>
-**ADD**: Adds two registers and stores the result in the destination register.
+- **ADD**: Adds two registers and stores the result in the destination register. 
+- **Operation**: `ADD:EX_MEM_ALUOUT <= ID_EX_A + ID_EX_B;` 
+- **32-bit OP Code**: (`02208300`)<sub>16</sub> 
+- **ID_EX_A**: (1)<sub>10</sub>  
+- **ID_EX_B**: (2)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (3)<sub>10</sub> 
+- **Procedure**: (1)<sub>10</sub>  + (2)<sub>10</sub>  = (3)<sub>10</sub> 
 
 #### **Instruction 2.** `sub r7, r1, r2` </br>
 ![SUB](https://github.com/user-attachments/assets/1f1a1318-f379-4ebd-9b4e-b01072205833) </br>
 ***Figure 2. SUB Instruction*** </br>
-**SUB**: Subtracts the second register from the first and stores the result in the destination register.
+- **SUB**: Subtracts the second register from the first and stores the result in the destination register.
+- **Operation**: `SUB:EX_MEM_ALUOUT <= ID_EX_A - ID_EX_B;` 
+- **32-bit OP Code**: (`02209380`)<sub>16</sub> 
+- **ID_EX_A**: (1)<sub>10</sub>  
+- **ID_EX_B**: (2)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (-1)<sub>10</sub> 
+- **Procedure**: (1)<sub>10</sub>  - (2)<sub>10</sub>  = (-1)<sub>10</sub> 
 
 #### **Instruction 3.** `and r8, r1, r3` </br>
 ![AND](https://github.com/user-attachments/assets/2f1726f5-7283-46ef-98f6-ae92ab506534) </br>
 ***Figure 3. AND Instruction*** </br>
-**AND**: Performs a bitwise AND on two registers and stores the result in the destination register.
+- **AND**: Performs a bitwise AND on two registers and stores the result in the destination register.
+- **Operation**: `AND:EX_MEM_ALUOUT <= ID_EX_A & ID_EX_B;` 
+- **32-bit OP Code**: (`0230A400`)<sub>16</sub> 
+- **ID_EX_A**: (1)<sub>10</sub>  
+- **ID_EX_B**: (3)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (1)<sub>10</sub> 
+- **Procedure**: (1)<sub>10</sub>  & (3)<sub>10</sub>  = (0001)<sub>2</sub> & (0011)<sub>2</sub> = (0001)<sub>2</sub> = (1)<sub>10</sub>
 
 #### **Instruction 4.** `or r9, r2, r5` </br>
 ![OR](https://github.com/user-attachments/assets/7014a244-9719-4087-98f0-eebc91beb9cb) </br>
 ***Figure 4. OR Instruction*** </br>
-**OR**: Performs a bitwise OR on two registers and stores the result in the destination register.
+- **OR**: Performs a bitwise OR on two registers and stores the result in the destination register.
+- **Operation**: `OR :EX_MEM_ALUOUT <= ID_EX_A | ID_EX_B;` 
+- **32-bit OP Code**: (`02513480`)<sub>16</sub> 
+- **ID_EX_A**: (2)<sub>10</sub>  
+- **ID_EX_B**: (5)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (7)<sub>10</sub> 
+- **Procedure**: (2)<sub>10</sub>  | (5)<sub>10</sub>  = (0010)<sub>2</sub> | (0101)<sub>2</sub> = (0111)<sub>2</sub> = (7)<sub>10</sub>
 
 #### **Instruction 5.** `xor r10, r1, r4` </br>
 ![XOR](https://github.com/user-attachments/assets/e225d901-fca9-4735-897a-9fe422ec7832) </br>
 ***Figure 5. XOR Instruction*** </br>
-**XOR**: Performs a bitwise XOR on two registers and stores the result in the destination register.
+- **XOR**: Performs a bitwise XOR on two registers and stores the result in the destination register.
+- **Operation**: `XOR:EX_MEM_ALUOUT <= ID_EX_A ^ ID_EX_B;` 
+- **32-bit OP Code**: (`0240C500`)<sub>16</sub> 
+- **ID_EX_A**: (1)<sub>10</sub>  
+- **ID_EX_B**: (4)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (5)<sub>10</sub> 
+- **Procedure**: (1)<sub>10</sub>  ^ (4)<sub>10</sub>  = (0001)<sub>2</sub> ^ (0100)<sub>2</sub> = (0101)<sub>2</sub> = (5)<sub>10</sub>
 
 #### **Instruction 6.** `slt r1, r2, r4` </br>
 ![SLT](https://github.com/user-attachments/assets/767c100a-b365-4e40-9541-4931fbb6a4f1) </br>
 ***Figure 6. SLT Instruction*** </br>
-**SLT**: Sets the destination register to 1 if the first register is less than the second; otherwise, it sets it to 0.
+- **SLT**: Sets the destination register to 1 if the first register is less than the second; otherwise, it sets it to 0.
+- **Operation**: `SLT:EX_MEM_ALUOUT <= (ID_EX_A < ID_EX_B) ? 32'd1 : 32'd0;` 
+- **32-bit OP Code**: (`02415580`)<sub>16</sub> 
+- **ID_EX_A**: (2)<sub>10</sub>  
+- **ID_EX_B**: (4)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (1)<sub>10</sub> 
+- **Procedure**: (2)<sub>10</sub> < (4)<sub>10</sub>  = `True`= (1)<sub>2</sub>
 
 #### **Instruction 7.** `addi r12, r4, 5` </br>
 ![ADDI](https://github.com/user-attachments/assets/1cdb5d04-ad6d-46df-bb84-b20ead2e66e3) </br>
 ***Figure 7. ADDI Instruction*** </br>
-**ADDI**: Adds an immediate value to a register and stores the result in the destination register.
+- **ADDI**: Adds an immediate value to a register and stores the result in the destination register.
+- **Operation**: `ADDI:EX_MEM_ALUOUT <= ID_EX_A + ID_EX_IMMEDIATE;` 
+- **32-bit OP Code**: (`00520600`)<sub>16</sub> 
+- **ID_EX_A**: (4)<sub>10</sub>  
+- **ID_EX_IMMEDIATE**: (5)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (9)<sub>10</sub> 
+- **Procedure**: (4)<sub>10</sub> + (5)<sub>10</sub>  = (9)<sub>10</sub>
 
 #### **Instruction 8.** `sw r3, r1, 2` </br>
 ![SW](https://github.com/user-attachments/assets/1894283b-b19c-4507-8b30-988a91f121a2) </br>
 ***Figure 8. SW Instruction*** </br>
-**SW**: Stores the word in a register to a memory address calculated from a base register and an immediate offset.
+- **SW**: Stores the word in a register to a memory address calculated from a base register and an immediate offset.
+- **Operation**: `SW  :EX_MEM_ALUOUT <= ID_EX_IR[24:20] + ID_EX_IR[19:15];` 
+- **32-bit OP Code**: (`00209181`)<sub>16</sub> 
+- **ID_EX_IR[24:20]**: (00010)<sub>2</sub>  
+- **ID_EX_IR[19:15]**: (00001)<sub>2</sub>  
+- **EX_MEM_ALUOUT**: (00011)<sub>2</sub> = (3)<sub>10</sub>
+- **Procedure**: (00010)<sub>2</sub> + (00001)<sub>2</sub> = (2)<sub>10</sub> + (1)<sub>10</sub>  = (00011)<sub>2</sub> = (3)<sub>10</sub>
 
 #### **Instruction 9.** `sll r15, r1, r2` </br>
 ![SLL](https://github.com/user-attachments/assets/b9c2e08b-cc01-423e-acf8-32efdc6f593a) </br>
 ***Figure 9. SLL Instruction*** </br>
 **SLL**: Shifts the bits in the first register left by the number of positions specified in the second register, storing the result in the destination register.
+- **Operation**: `SLL:EX_MEM_ALUOUT <= ID_EX_A << ID_EX_B;` 
+- **32-bit OP Code**: (`00208783`)<sub>16</sub> 
+- **ID_EX_A**: (1)<sub>10</sub>  
+- **ID_EX_B**: (2)<sub>10</sub>  
+- **EX_MEM_ALUOUT**: (4)<sub>10</sub>
+- **Procedure**: (1)<sub>10</sub> << (2)<sub>10</sub> = (0001)<sub>2</sub> << (2)<sub>10</sub>  = (0100)<sub>2</sub> = (4)<sub>10</sub>
 
 
 
