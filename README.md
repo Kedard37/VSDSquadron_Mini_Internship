@@ -33,7 +33,7 @@ This repository includes the files related to VSDSquadron Mini Research Internsh
    ***Figure 4. Generated Assembly code for the C code using `-Ofast` variable*** </br>
    But, when `-Ofast` variable is used, we see that the compiler takes 12 instructions to compile the C code.
 
-### Go to [Task 1](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%201) directory to get the codes, linux commands & more information about this task!
+### Visit [Task 1](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%201) directory to get the codes, linux commands & more information about this task!
 </details>
 
 ---
@@ -111,7 +111,7 @@ By comparing multiple inputs, the design detects and outputs both the maximum an
 ***Figure 5. View the C Program***
 </details>
 
-### Go to [Task 2](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%202) directory to get the codes, linux commands & more information about this task!
+### Visit [Task 2](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%202) directory to get the codes, linux commands & more information about this task!
 </details>
 
 ---
@@ -385,7 +385,7 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **32-bit instruction**: (`0000000 00100 00001 100 01000 0110011`)<sub>2</sub> = (`0040C433`)<sub>16</sub>
 </details>
 
-### Go to [Task 3](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%203) directory to get more information about this task!
+### Visit [Task 3](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%203) directory to get more information about this task!
 </details>
 
 ---
@@ -539,7 +539,20 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 >    - **32-bit OP Code**: (`00208681`)<sub>16</sub> 
 > - **SRL**: Shift right logical; shifts the bits in a register to the right by a specified amount, filling with zeros.
 >    - **Operation**: `SRL:EX_MEM_ALUOUT <= ID_EX_A >> ID_EX_B;` 
->    - **32-bit OP Code**: (`00271803`)<sub>16</sub> 
+>    - **32-bit OP Code**: (`00271803`)<sub>16</sub>
+
+### Visit [Task 4](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%204) directory to get the codes, linux commands to run a simulation on iverilog & more information about this task!
+</details>
+
+---
+
+<details>
+<summary><h2>Task: 5. Designing an Application to implement on the VSDSquadron Mini Board</h2></summary>
+
+#### Recording-5: https://1drv.ms/v/s!Ai4WW_jutengioh8MuA8BX0hiGfEmQ?e=N4GmAb
+- [x] Update the repo with Project Name, Overview, Components Required to build your Application, Circuit Connection, Pinout Diagram and Table for Pin Connection.
+
+### Visit [Task 5](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%205) directory to get the codes, linux commands to run a simulation on iverilog & more information about this task!
 </details>
 
 ---
