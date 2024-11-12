@@ -572,7 +572,7 @@ The counter continuously cycles through the ten states in a loop, resetting to 0
 4. 1KΩ Resistor (Qty. 1)
 5. Breadboard - Small (Qty. 1)
 6. Jumper Wires (Qty. As per your Requirement)
-7. Power Bank - To Power the Circuit (Qty. 1) - Power any other sources can also be used
+7. Power Bank - To Power the Circuit (Qty. 1) - Any other Power Sources can be used
 
 ## Circuit Connections:
 ![Decade Up & Down Counter Circuit Diagram](https://github.com/user-attachments/assets/ac190bbe-9002-4a09-bed6-e941a6fd632f) </br>
