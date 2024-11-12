@@ -1,6 +1,6 @@
 # Task 5 Output:
 ## Project Name:
-### Implementation of a Decade Up & Down Counter using VSDSquadron Mini Board.
+### Implementation of a Decade Up & Down Counter using VSDSquadron Mini Board
 
 ## Overview:
 The **Decade Up & Down Counter** project showcases a digital counting system designed to increment or decrement through a sequence of ten states, ranging from 0 to 9. This counter is built to count either up or down based on a control input, making it versatile for various applications where sequential counting is required. At the heart of the system is a flip-flop-based architecture or a dedicated counter IC, which tracks the current count and modifies it according to the user's input for up or down counting. Here, we are using a RISC-V based processor to execute the same.
