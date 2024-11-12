@@ -32,9 +32,10 @@ This repository includes the files related to VSDSquadron Mini Research Internsh
    ![Generated Assembly code for the C code using `-Ofast` variable](https://github.com/user-attachments/assets/e82c6220-c96b-44c0-b95f-d7e0014a3520)
    ***Figure 4. Generated Assembly code for the C code using `-Ofast` variable*** </br>
    But, when `-Ofast` variable is used, we see that the compiler takes 12 instructions to compile the C code.
+   
+</details>
 
 ### Visit [Task 1](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%201) directory to get the codes, linux commands & more information about this task!
-</details>
 
 ---
 
@@ -111,8 +112,9 @@ By comparing multiple inputs, the design detects and outputs both the maximum an
 ***Figure 5. View the C Program***
 </details>
 
-### Visit [Task 2](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%202) directory to get the codes, linux commands & more information about this task!
 </details>
+
+### Visit [Task 2](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%202) directory to get the codes, linux commands & more information about this task!
 
 ---
 
@@ -385,8 +387,9 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 - **32-bit instruction**: (`0000000 00100 00001 100 01000 0110011`)<sub>2</sub> = (`0040C433`)<sub>16</sub>
 </details>
 
-### Visit [Task 3](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%203) directory to get more information about this task!
 </details>
+
+### Visit [Task 3](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%203) directory to get more information about this task!
 
 ---
 
@@ -541,8 +544,9 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 >    - **Operation**: `SRL:EX_MEM_ALUOUT <= ID_EX_A >> ID_EX_B;` 
 >    - **32-bit OP Code**: (`00271803`)<sub>16</sub>
 
-### Visit [Task 4](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%204) directory to get the codes, linux commands to run a simulation on iverilog & more information about this task!
 </details>
+
+### Visit [Task 4](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%204) directory to get the codes, linux commands to run a simulation on iverilog & more information about this task!
 
 ---
 
@@ -552,7 +556,57 @@ Here is the instruction breakdown for the given RISC-V instructions in the Instr
 #### Recording-5: https://1drv.ms/v/s!Ai4WW_jutengioh8MuA8BX0hiGfEmQ?e=N4GmAb
 - [x] Update the repo with Project Name, Overview, Components Required to build your Application, Circuit Connection, Pinout Diagram and Table for Pin Connection.
 
-### Visit [Task 5](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%205) directory to get the codes, linux commands to run a simulation on iverilog & more information about this task!
+# Task 5 Output:
+## Project Name:
+### Implementation of a Decade Up & Down Counter using VSDSquadron Mini Board.
+
+## Overview:
+The **Decade Up & Down Counter** project showcases a digital counting system designed to increment or decrement through a sequence of ten states, ranging from 0 to 9. This counter is built to count either up or down based on a control input, making it versatile for various applications where sequential counting is required. At the heart of the system is a flip-flop-based architecture or a dedicated counter IC, which tracks the current count and modifies it according to the user's input for up or down counting. Here, we are using a RISC-V based processor to execute the same.
+
+The counter continuously cycles through the ten states in a loop, resetting to 0 after reaching 9 when counting up or transitioning back to 9 from 0 when counting down. This cyclical counting feature makes the Decade Up/Down Counter ideal for applications in digital clocks, timers, frequency division, and other counting-based circuits. The project demonstrates precise, reliable counting and offers users a flexible, programmable solution for tasks that require accurate sequential control in digital systems.
+
+## Components Required:
+1. VSDSquadron Mini Board - CH32V003x RISC-V based Microprocessors (Qty. 1)
+2. 7 Segment Display - Common Cathode - SUN056CC (Qty. 1)
+3. 3 Terminal Slide Switch (Qty. 1)
+4. 1KΩ Resistor (Qty. 1)
+5. Breadboard - Small (Qty. 1)
+6. Jumper Wires (Qty. As per your Requirement)
+7. Power Bank - To Power the Circuit (Qty. 1) - Power any other sources can also be used
+
+## Circuit Connections:
+![Decade Up & Down Counter Circuit Diagram](https://github.com/user-attachments/assets/ac190bbe-9002-4a09-bed6-e941a6fd632f) </br>
+***Figure 1. Decade Up & Down Counter Circuit Diagram***
+
+The circuit integrates a **7-segment display** with the **VSDSquadron Mini** microcontroller to display numbers from 0 to 9, forming a MOD-10 counter. Each segment of the 7-segment display (labeled A to G) is connected to specific digital pins on the VSDSquadron Mini. The segment pins is connected as follows: segment ***'A'*** to **PD1**, ***'B'*** to **PD2**, ***'C'*** to **PD3**, ***'D'*** to **PD4**, ***'E'*** to **PD5**, ***'F'*** to **PD6**, ***'G'*** to **PD7** and ***'DP'*** to **GND** on the microcontroller. Current-limiting resistor is added in series with each segment pin to protect the LEDs in the display. The common ground pin of the 7-segment display is connected to the **GND** pin of the microcontroller, and the display is powered by the **5V** supply from the VSDSquadron Mini.
+
+A **3-terminal switch** is also used to toggle between up-counting and down-counting modes. The common terminal of the switch is connected to **PD0**, while the other two terminals are connected to **GND** and **5V** on the microcontroller. This configuration allows the microcontroller to read the switch’s state and determine the counting direction. When the switch connects **PD0** to **GND**, the microcontroller interprets it as an down-count command; when **PD0** is connected to **5V**, it counts up. The microcontroller reads these signals, incrementing the count for up mode and decrementing it for down mode, providing dynamic control over the counting direction.
+
+## Pinout Diagram:
+![Decade Up & Down Counter Pinout Diagram](https://github.com/user-attachments/assets/15ac4125-31ae-45e2-9a2e-f479514142b4) </br>
+***Figure 2. Decade Up & Down Counter Pinout Diagram***
+
+## Table for Pin Connection:
+| VSDSquadron Mini Board | 7 Segment Display (Common Cathode) |
+| :----: | :----: |
+| PD1 | **A** - Pin 7 |
+| PD2 | **B** - Pin 6 |
+| PD3 | **C** - Pin 4 |
+| PD4 | **D** - Pin 2 |
+| PD5 | **E** - Pin 1 |
+| PD6 | **F** - Pin 9 |
+| PD7 | **G** - Pin 10 |
+| GND | **DP** - Pin 5 |
+| GND | **GND** - Pin 3, 8 |
+
+| VSDSquadron Mini Board | 3 Terminal Slide Switch |
+| :----: | :----: |
+| 5V | Terminal 1 |
+| PD0 | Common Terminal |
+| GND | Terminal 2 |
+
 </details>
+
+### Visit [Task 5](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%205) directory to check out for Circuit and Pinout Diagrams!
 
 ---
