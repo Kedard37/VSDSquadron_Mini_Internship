@@ -25,3 +25,24 @@ The circuit integrates a **7-segment display** with the **VSDSquadron Mini** mic
 A **3-terminal switch** is also used to toggle between up-counting and down-counting modes. The common terminal of the switch is connected to **PD0**, while the other two terminals are connected to **GND** and **5V** on the microcontroller. This configuration allows the microcontroller to read the switch’s state and determine the counting direction. When the switch connects **PD0** to **GND**, the microcontroller interprets it as an down-count command; when **PD0** is connected to **5V**, it counts up. The microcontroller reads these signals, incrementing the count for up mode and decrementing it for down mode, providing dynamic control over the counting direction.
 
 ## Pinout Diagram:
+![Decade Up & Down Counter Pinout Diagram](https://github.com/user-attachments/assets/15ac4125-31ae-45e2-9a2e-f479514142b4) </br>
+***Figure 2. Decade Up & Down Counter Pinout Diagram***
+
+## Table for Pin Connection:
+| VSDSquadron Mini Board | 7 Segment Display (Common Cathode) |
+| :----: | :----: |
+| PD1 | **A** - Pin 7 |
+| PD2 | **B** - Pin 6 |
+| PD3 | **C** - Pin 4 |
+| PD4 | **D** - Pin 2 |
+| PD5 | **E** - Pin 1 |
+| PD6 | **F** - Pin 9 |
+| PD7 | **G** - Pin 10 |
+| GND | **DP** - Pin 5 |
+| GND | **GND** - Pin 3, 8 |
+
+| VSDSquadron Mini Board | 3 Terminal Slide Switch |
+| :----: | :----: |
+| 5V | Terminal 1 |
+| PD0 | Common Terminal |
+| GND | Terminal 2 |
