@@ -610,3 +610,28 @@ A **3-terminal switch** is also used to toggle between up-counting and down-coun
 ### Visit [Task 5](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%205) directory to check out for Circuit and Pinout Diagrams!
 
 ---
+
+<details>
+<summary><h2>Task: 6. Writing the Embedded C Code to run the Application and to Make an Application Video</h2></summary>
+
+#### Recording-6: https://1drv.ms/v/s!Ai4WW_jutengiolkxov715w-asATcQ?e=YscWxk
+- [x] Upload Final working code and short video of the application
+# Task 6 Output:
+## Software Used to Program:
+### Arduino IDE
+Check this [LINK](https://github.com/openwch/arduino_core_ch32) to know how to use Arduino IDE to upload the Embedded C Program to VSDSquadron Mini Board.
+
+## Embedded C Program:
+![Decade_Up_and_Down _Counter](https://github.com/user-attachments/assets/6799a588-eb7d-4c40-ad0d-8a12c8ddab11)
+> [!CAUTION]
+> Please note that the definition of 7 Segment Display Pins differ from the ones shown in the circuit diagram in Task 5, due to some problems while connecting on the hardware.
+
+## Application Video:
+Click on the link below to access the video: </br>
+[Decade Up and Down Counter using VSDSquadron Mini](https://www.youtube.com/watch?v=9uscqmVCgss)
+
+</details>
+
+### Visit [Task 6](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%206) directory to check out for the Code!
+
+---
