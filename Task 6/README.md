@@ -9,3 +9,5 @@ Check this [LINK](https://github.com/openwch/arduino_core_ch32) to know how to u
 > Please note that the definition of 7 Segment Display Pins differ from the ones shown in the circuit diagram in Task 5, due to some problems while connecting on the hardware.
 
 ## Application Video:
+Click on the link below to access the video: </br>
+[Decade Up and Down Counter using VSDSquadron Mini](https://www.youtube.com/watch?v=9uscqmVCgss)
