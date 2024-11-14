@@ -623,7 +623,6 @@ Check this [LINK](https://github.com/openwch/arduino_core_ch32) to know how to u
 
 ## Embedded C Program:
 ![Decade_Up_and_Down _Counter](https://github.com/user-attachments/assets/6799a588-eb7d-4c40-ad0d-8a12c8ddab11)
-> [!CAUTION]
 > Please note that the definition of 7 Segment Display Pins differ from the ones shown in the circuit diagram in Task 5, due to some problems while connecting on the hardware.
 
 ## Application Video:
@@ -635,3 +634,30 @@ Click on the link below to access the video: </br>
 ### Visit [Task 6](https://github.com/Kedard37/VSDSquadron_Mini_Internship/tree/main/Task%206) directory to check out for the Code!
 
 ---
+
+## Summary
+- The Task 1 involves compilation of C code to examine the generated assembly instructions, which is critical in understanding low-level operations within a RISC-V architecture. Using GCC as the compiler, this process compiles C code and gives the output. A RISC-V compiler is then run, in order to execute the C program. A binary data is obtained as output of the RISC-V compiler. Objdump is then used to generate a human-readable disassembly of binary output, facilitating the examination of instruction flows and memory usage. This approach is essential for exploring the control flow and data handling of RISC-V architecture, helping in performance optimizations and validating instruction set usage for RISC-V ISA compliance.
+  
+- The Task 2 uses SPIKE, a RISC-V ISA simulator, to run simulation analysis and build a simple application to validate functional correctness. SPIKE allows the analysis of instruction execution and the verification of the software behavior on a virtual RISC-V microarchitecture, providing insights into instruction timing and memory accesses.
+  
+- Tasks 3 and 4 involve analyzing and encoding RISC-V instruction sets for specific application code, followed by performing functional simulations using a Verilog netlist to produce waveform analysis of the RISC-V core. This step is crucial for understanding the microarchitectural behaviors, such as pipeline stages and functional unit interactions, under simulated conditions.
+
+- Tasks 5 and 6 culminates in the practical implementation of an application on the VSDSquadron Mini Board, integrating software and hardware for a hands-on understanding of the RISC-V embedded environment and interfacing with peripherals, which tests both the robustness of the design and the application’s hardware-software integration.
+
+## Conclusion:
+Things I learnt from this Internship:
+- Executing a basic C program and compiling it using GCC Compiler.
+- Generating an equivalent RISC-V architecture based assembly code for the C program and reading the generated code using 'Objdump' file.
+- Compiling the 'Objdump' file and verifying the output compiled by the Spike Simulator, with the initially compiled C program using GCC.
+- After we get the same results from both GCC and Spike Simulator compilers, we are good to proceed.
+- Understanding the RISC-V Instruction Set.
+- Implementing RISC-V micro-architecture using RTL description in Verilog.
+- Post functional verification of the RTL description of the RISC-V micro-architecture, we undergo a long process of Synthesis, Floor Planning, Physical Verification and finally, TAPE OUT the layout to the Foundry for chip manufacturing.
+> [!NOTE]
+> This above step of Synthesis, SoC(System on Chip) Design and chip manufacturing was **not** a part of this Internship.
+- Once the Manufactured Chip is TAPED IN from the Foundry, it is placed on the Printed Circuit Board(PCB), from where the user can access the Input/Output ports of the Chip easily.
+- Using the RISC-V based microprocessor embedded on an PCB, many electronics and IoT based embedded systems applications can be executed.
+### Hence, this Internship showed me how both VLSI and Embedded Systems domains work together to solve real world problems!
+
+## Acknowledgements:
+I would like to extend my heartfelt gratitude to Kunal Ghosh for this invaluable internship experience on RISC-V Architecture using the VSDSquadron Mini. This program offered me the ideal platform to dive into the world of RISC-V, fueling my passion and giving me the perfect launchpad to explore this cutting-edge field. The journey has been immensely rewarding, filled with insightful learning opportunities and hands-on challenges that deepened my understanding and skills. My sincere thanks to VLSI System Design for creating such an exceptional research internship, which has provided a remarkable foundation for my future in RISC-V and beyond.
